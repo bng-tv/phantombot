@@ -47,6 +47,8 @@ ARG BASEDIR=/opt/${PROJECT_NAME}
 ARG BUILDDIR=${BASEDIR}_build
 ARG DATADIR=${BASEDIR}_data
 
+RUN apk --no-cache add bash
+
 RUN mkdir -p "${BASEDIR}" "${DATADIR}" "${BASEDIR}/logs"
 
 COPY --from=builder "${BUILDDIR}/dist/build/." "${BASEDIR}/"
@@ -68,4 +70,4 @@ WORKDIR "${BASEDIR}"
 
 EXPOSE 25000 25001 25002 25003 25004 25005
 
-CMD ["sh", "launch-service.sh"]
+CMD ["bash", "launch-service.sh"]
