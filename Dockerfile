@@ -34,7 +34,7 @@ RUN mkdir -p "${BUILDDIR}" \
         /var/tmp/*
 
 RUN cd "${BUILDDIR}" \
-    && git clone https://github.com/PhantomBot/PhantomBot.git .
+    && git clone https://github.com/bgefrich/BrianBot .
 
 RUN cd "${BUILDDIR}" \
     && ant jar
