@@ -40,14 +40,12 @@ RUN cd "${BUILDDIR}" \
     && ant jar
 
 # Application container
-FROM openjdk:11-jre-alpine
+FROM openjdk:11-jre
 
 ARG PROJECT_NAME=PhantomBot
 ARG BASEDIR=/opt/${PROJECT_NAME}
 ARG BUILDDIR=${BASEDIR}_build
 ARG DATADIR=${BASEDIR}_data
-
-RUN apk --no-cache add bash
 
 RUN mkdir -p "${BASEDIR}" "${DATADIR}" "${BASEDIR}/logs"
 
