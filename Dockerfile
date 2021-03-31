@@ -19,7 +19,7 @@
 FROM openjdk:11-jdk as builder
 
 ARG PROJECT_NAME=PhantomBot
-ARG BASEDIR=/opt/${PROJECT_NAME}
+ARG BASEDIR=/tmp/${PROJECT_NAME}
 ARG BUILDDIR=${BASEDIR}_build
 ARG DATADIR=${BASEDIR}_data
 
@@ -27,11 +27,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN mkdir -p "${BUILDDIR}" \
     && apt-get update -q \
     && apt-get install -yqq ant git \
-    && apt-get clean \
-    && rm -rf \
-        /var/lib/apt/lists/* \
-        /tmp/* \
-        /var/tmp/*
+    && apt-get clean
 
 RUN cd "${BUILDDIR}" \
     && git clone https://github.com/PhantomBot/PhantomBot.git .
