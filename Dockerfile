@@ -40,7 +40,7 @@ RUN cd "${BUILDDIR}" \
     && ant jar
 
 # Application container
-FROM openjdk:8-jre-alpine
+FROM openjdk:11-jre-alpine
 
 ARG PROJECT_NAME=PhantomBot
 ARG BASEDIR=/opt/${PROJECT_NAME}
