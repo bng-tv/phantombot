@@ -16,7 +16,7 @@
 #
 
 # Build container
-FROM openjdk:11-jdk as builder
+FROM openjdk:9-jdk as builder
 
 ARG PROJECT_NAME=PhantomBot
 ARG BASEDIR=/tmp/${PROJECT_NAME}
@@ -36,7 +36,7 @@ RUN cd "${BUILDDIR}" \
     && ant jar
 
 # Application container
-FROM openjdk:11-jre
+FROM openjdk:9-jre
 
 ARG PROJECT_NAME=PhantomBot
 ARG BASEDIR=/opt/${PROJECT_NAME}
