@@ -19,7 +19,7 @@
 FROM openjdk:11-jdk as builder
 
 ARG PROJECT_NAME=PhantomBot
-ARG BASEDIR=/tmp/${PROJECT_NAME}
+ARG BASEDIR=/opt/${PROJECT_NAME}
 ARG BUILDDIR=${BASEDIR}_build
 ARG DATADIR=${BASEDIR}_data
 
