@@ -40,7 +40,7 @@ FROM openjdk:11-jre
 
 ARG PROJECT_NAME=PhantomBot
 ARG BASEDIR=/opt/${PROJECT_NAME}
-ARG BUILDDIR=/tmp/${PROJECT_NAME}/_build
+ARG BUILDDIR=/tmp/${PROJECT_NAME}_build
 ARG DATADIR=${BASEDIR}_data
 
 RUN mkdir -p "${BASEDIR}" "${DATADIR}" "${BASEDIR}/logs"
